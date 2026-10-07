@@ -1,6 +1,6 @@
 import React from "react"
 
-const categories = ["Anime", "Games", "Tech", "Cultura Pop"]
+const categories = ["Anime", "Games", "Tech", "Cultura Pop", "Fofocas"]
 const contributors = [
   { name: "Gaba", email: "gaba@revista.com" },
   { name: "Lucas", email: "lucas@revista.com" },
