@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+
+local_backend: true
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "select", options: ["gaba@revista.com", "lucas@revista.com", "laura@revista.com", "marina@revista.com", "vitor@revista.com"] }
+      - { label: "Category", name: "category", widget: "select", options: ["Anime", "Games", "Tech", "Cultura Pop"] }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Cover Color", name: "coverColor", widget: "color", default: "#e60012" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "authors"
+    label: "Authors"
+    folder: "content/authors"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{fields.name}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text" }
+      - { label: "Role", name: "role", widget: "string" }
